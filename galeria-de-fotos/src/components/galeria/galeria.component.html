@@ -1,0 +1,20 @@
+<main class="jumbotron text-center">
+
+    <h3>{{title}}</h3>
+
+  <div *ngIf="pictures.length > 0">
+    <img [src]="pictures[atualPicture]" alt="Fotos" style="width: 40vw;">
+
+    <section>
+      <p>Foto atual {{atualPicture + 1 }} de {{pictures.length}} </p>
+    <div class="btn-group">
+      <button class="btn btn-primary" (click)="toFirstPic()" [disabled]="atualPicture == firstPic()">Primeira</button>
+      <button class="btn btn-primary" (click)="previousPic()" [disabled]="atualPicture == firstPic()">Anterior</button>
+      <button class="btn btn-primary" (click)="nextPic()" [disabled]="atualPicture == lastPic()">Próxima</button>
+      <button class="btn btn-primary" (click)="toLastPic()" [disabled]="atualPicture == lastPic()">Ultima Foto</button>
+    </div>
+    </section>
+
+  </div>
+
+</main>
